@@ -1,0 +1,124 @@
+import { Card } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { TorusIcon as Torii, Clock, MapPin, Users, RecycleIcon, Trash2 } from 'lucide-react'
+import Image from "next/image"
+
+export default function CyclePlusEvent() {
+  return (
+    <div className="min-h-screen bg-purple-900 p-4 md:p-8">
+      <div className="mx-auto max-w-4xl space-y-8">
+        {/* ヘッダーセクション */}
+        <div className="text-center space-y-4">
+          <div className="flex justify-center items-center gap-2">
+            <img
+              src="/placeholder.svg?height=40&width=40"
+              alt="L00+"
+              className="h-10 w-10"
+            />
+            <h1 className="text-3xl md:text-4xl font-bold text-white tracking-wider">
+              サイクループラス
+              <Badge variant="secondary" className="ml-2">
+                vol.7
+              </Badge>
+            </h1>
+          </div>
+          <div className="flex justify-center">
+            <RecycleIcon className="h-8 w-8 text-white/80" />
+          </div>
+        </div>
+
+        {/* メインビジュアル */}
+        <Card className="p-6 bg-white/10 text-white border-none backdrop-blur-sm overflow-hidden relative">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500/30 to-green-500/30" />
+          <div className="relative z-10 space-y-6">
+            <div className="text-center space-y-4">
+              <h2 className="text-2xl md:text-3xl font-medium leading-relaxed">
+                ゴミ拾いで街をキレイに
+              </h2>
+              <p className="text-lg text-white/90">
+                住んでいる街・お世話になっている「長田の街」をみんなで綺麗にしませんか？
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="aspect-[4/3] relative rounded-lg overflow-hidden">
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot_20241208-201316-5xNvuPMm6RgxK7pr05BWKDsLsTCh03.png"
+                  alt="清掃活動の様子1"
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+              <div className="aspect-[4/3] relative rounded-lg overflow-hidden">
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot_20241208-201345-Yp2OBraUZrXpHEtJycxLcCGexiPedO.png"
+                  alt="清掃活動の様子2"
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+            </div>
+
+            <div className="flex justify-center items-center gap-4 bg-purple-800/50 p-4 rounded-lg">
+              <Trash2 className="h-12 w-12 text-white/90" />
+              <p className="text-lg font-medium">みんなで協力して街をキレイにしましょう</p>
+            </div>
+          </div>
+        </Card>
+
+        {/* イベント詳細 */}
+        <Card className="p-6 bg-white/10 text-white border-none backdrop-blur-sm">
+          <div className="space-y-6">
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <div className="flex items-center gap-2">
+                  <Clock className="h-5 w-5" />
+                  <h3 className="text-lg font-medium">開催日時</h3>
+                </div>
+                <div className="pl-7">
+                  <p className="text-xl">2024年10月20日(日)</p>
+                  <p className="text-lg">10:00〜11:00</p>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-center gap-2">
+                  <Users className="h-5 w-5" />
+                  <h3 className="text-lg font-medium">参加について</h3>
+                </div>
+                <div className="pl-7 space-y-2">
+                  <p>・予約不要</p>
+                  <p>・手ぶらでの参加OK</p>
+                  <p>・軍手、トング、ごみ袋は貸出あり</p>
+                </div>
+              </div>
+            </div>
+
+            {/* タイムテーブル */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <Clock className="h-5 w-5" />
+                <h3 className="text-lg font-medium">タイムテーブル</h3>
+              </div>
+              <div className="pl-7 space-y-2">
+                <p>10:00 L00+前 集合</p>
+                <p>10:00〜10:50 清掃活動（高速長田駅まで移動）</p>
+                <p>10:50〜11:00 解散（写真撮影含む）</p>
+              </div>
+            </div>
+          </div>
+        </Card>
+
+        {/* フッター */}
+        <div className="text-center text-white/80">
+          <p>ご家族・お友達とお気軽にお越しください。</p>
+          <div className="flex justify-center items-center gap-2 mt-2">
+            <Torii className="h-5 w-5" />
+            <p>神戸市長田区</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
